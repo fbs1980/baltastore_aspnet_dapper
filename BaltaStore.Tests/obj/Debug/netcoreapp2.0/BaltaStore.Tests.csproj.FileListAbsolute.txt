@@ -1,0 +1,6 @@
+D:\dev\BaltaStore\BaltaStore.Tests\bin\Debug\netcoreapp2.0\CoverletSourceRootsMapping
+D:\dev\BaltaStore\BaltaStore.Tests\obj\Debug\netcoreapp2.0\BaltaStore.Tests.csproj.AssemblyReference.cache
+D:\dev\BaltaStore\BaltaStore.Tests\obj\Debug\netcoreapp2.0\BaltaStore.Tests.GeneratedMSBuildEditorConfig.editorconfig
+D:\dev\BaltaStore\BaltaStore.Tests\obj\Debug\netcoreapp2.0\BaltaStore.Tests.AssemblyInfoInputs.cache
+D:\dev\BaltaStore\BaltaStore.Tests\obj\Debug\netcoreapp2.0\BaltaStore.Tests.AssemblyInfo.cs
+D:\dev\BaltaStore\BaltaStore.Tests\obj\Debug\netcoreapp2.0\BaltaStore.Tests.csproj.CoreCompileInputs.cache

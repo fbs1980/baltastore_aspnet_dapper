@@ -1,0 +1,10 @@
+D:\dev\BaltaStore\BaltaStore.Domain\bin\Debug\netcoreapp2.0\BaltaStore.Domain.deps.json
+D:\dev\BaltaStore\BaltaStore.Domain\bin\Debug\netcoreapp2.0\BaltaStore.Domain.dll
+D:\dev\BaltaStore\BaltaStore.Domain\bin\Debug\netcoreapp2.0\BaltaStore.Domain.pdb
+D:\dev\BaltaStore\BaltaStore.Domain\obj\Debug\netcoreapp2.0\BaltaStore.Domain.csproj.AssemblyReference.cache
+D:\dev\BaltaStore\BaltaStore.Domain\obj\Debug\netcoreapp2.0\BaltaStore.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\dev\BaltaStore\BaltaStore.Domain\obj\Debug\netcoreapp2.0\BaltaStore.Domain.AssemblyInfoInputs.cache
+D:\dev\BaltaStore\BaltaStore.Domain\obj\Debug\netcoreapp2.0\BaltaStore.Domain.AssemblyInfo.cs
+D:\dev\BaltaStore\BaltaStore.Domain\obj\Debug\netcoreapp2.0\BaltaStore.Domain.csproj.CoreCompileInputs.cache
+D:\dev\BaltaStore\BaltaStore.Domain\obj\Debug\netcoreapp2.0\BaltaStore.Domain.dll
+D:\dev\BaltaStore\BaltaStore.Domain\obj\Debug\netcoreapp2.0\BaltaStore.Domain.pdb

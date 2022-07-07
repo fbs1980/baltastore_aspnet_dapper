@@ -1,0 +1,5 @@
+D:\dev\BaltaStore\BaltaStore.Infra\obj\Debug\netcoreapp2.0\BaltaStore.Infra.csproj.AssemblyReference.cache
+D:\dev\BaltaStore\BaltaStore.Infra\obj\Debug\netcoreapp2.0\BaltaStore.Infra.GeneratedMSBuildEditorConfig.editorconfig
+D:\dev\BaltaStore\BaltaStore.Infra\obj\Debug\netcoreapp2.0\BaltaStore.Infra.AssemblyInfoInputs.cache
+D:\dev\BaltaStore\BaltaStore.Infra\obj\Debug\netcoreapp2.0\BaltaStore.Infra.AssemblyInfo.cs
+D:\dev\BaltaStore\BaltaStore.Infra\obj\Debug\netcoreapp2.0\BaltaStore.Infra.csproj.CoreCompileInputs.cache
