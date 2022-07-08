@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "laxSHT0fj2fxOXMYKwipKDUuLJGXbZL7NPhOF1hZ56HEA/QWKZwogvVLSp4GC8YUW3rvvAxEgkAKCAavHZq5Vg==",
+  "dgSpecHash": "MsNHq27iOmOwZDjNoZbKrZaRKdb6hPBT7HwgrMUbq5Xffh9CvFX3ktfA2M1len9QQSHJop+QKVZ1iv/iYAKZDA==",
   "success": true,
   "projectFilePath": "D:\\dev\\BaltaStore\\BaltaStore.Domain\\BaltaStore.Domain.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\felipe.bastos\\.nuget\\packages\\fluentvalidator\\2.0.2\\fluentvalidator.2.0.2.nupkg.sha512",
     "C:\\Users\\felipe.bastos\\.nuget\\packages\\microsoft.netcore.app\\2.0.0\\microsoft.netcore.app.2.0.0.nupkg.sha512",
     "C:\\Users\\felipe.bastos\\.nuget\\packages\\microsoft.netcore.dotnetapphost\\2.0.0\\microsoft.netcore.dotnetapphost.2.0.0.nupkg.sha512",
     "C:\\Users\\felipe.bastos\\.nuget\\packages\\microsoft.netcore.dotnethostpolicy\\2.0.0\\microsoft.netcore.dotnethostpolicy.2.0.0.nupkg.sha512",

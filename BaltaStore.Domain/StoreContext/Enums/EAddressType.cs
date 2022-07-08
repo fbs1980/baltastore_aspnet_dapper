@@ -4,9 +4,9 @@ using System.Text;
 
 namespace BaltaStore.Domain.StoreContext.Enums
 {
-    public class EAddressType
+    public enum EAddressType
     {
         Shipping = 1,
-        Billing = 2
+        Billing = 2,
     }
 }

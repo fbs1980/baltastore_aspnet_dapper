@@ -1,15 +1,16 @@
 ﻿using BaltaStore.Domain.StoreContext.Enums;
+using FluentValidator;
 
 namespace BaltaStore.Domain.StoreContext.Entities
 {
-    internal class Order
+    internal class Order : Notifiable
     {
         private readonly IList<OrderItem> _items;
         private readonly IList<Delivery> _deliveries;
         public Order(Customer customer)
         {
             Customer = customer;
-            Number = Guid.NewGuid().ToString().Replace("-","").Substring(0,8).ToUpper();
+            
             CreateDate = DateTime.Now;
             Status = EOrderStatus.Created;
             _items = new List<OrderItem>();
@@ -27,16 +28,60 @@ namespace BaltaStore.Domain.StoreContext.Entities
             _items.Add(item);
         }
 
-        public void AddDelivery(Delivery delivery)
+        
+        //Criar um pedido
+        public void Place()
         {
+            //Gera o número do pedido
+            Number = Guid.NewGuid().ToString().Replace("-", "").Substring(0, 8).ToUpper();
+            //Validar
+            if (_items.Count == 0)
+                AddNotification("Order", "Este pedido não possui itens");
+        }
+
+        //Pagar um pedido
+        public void Pay()
+        {
+            
+            Status = EOrderStatus.Paid;
+        }
+
+        //Enviar um pedido
+        public void Shipp()
+        {
+            //A cada 5 produtos é uma entrega
+            var deliveries = new List<Delivery>();
+            deliveries.Add(new Delivery(DateTime.Now.AddDays(5)));
+            var count = 1;
+
+
+            //Quebra as entregas
+            foreach (var item in _items)
+            {
+                if (count == 5)
+                {
+                    count = 1;
+                    deliveries.Add(new Delivery(DateTime.Now.AddDays(5)));
+                }
+                count++;                
+            }
+
+
+            //Evia todas as entregas
+            deliveries.ForEach(x => x.Shipp());
+
+            //Adiciona as entregas ao pedido
+            deliveries.ForEach(x => _deliveries.Add(x));
+
+            var delivery = new Delivery(DateTime.Now.AddDays(5));
             _deliveries.Add(delivery);
         }
 
-        //to Place An Order
-        public void Place()
+        //Cancelar um pedido
+        public void Cancel()
         {
-
+            Status = EOrderStatus.Canceled;
+            _deliveries.ToList().ForEach(x => x.Cancel());
         }
-
     }
 }

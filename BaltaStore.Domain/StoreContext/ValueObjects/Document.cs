@@ -6,7 +6,7 @@ namespace BaltaStore.Domain.StoreContext.ValueObjects
 {
     public class Document
     {
-        public Document(string nummber)
+        public Document(string number)
         {
             Number = number;
         }
