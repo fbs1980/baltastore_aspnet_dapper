@@ -3,19 +3,20 @@ using FluentValidator;
 
 namespace BaltaStore.Domain.StoreContext.Entities
 {
-    internal class Order : Notifiable
+    public class Order : Notifiable
     {
         private readonly IList<OrderItem> _items;
         private readonly IList<Delivery> _deliveries;
+
         public Order(Customer customer)
         {
             Customer = customer;
-            
             CreateDate = DateTime.Now;
             Status = EOrderStatus.Created;
             _items = new List<OrderItem>();
             _deliveries = new List<Delivery>();
         }
+
         public Customer Customer { get; private set; }
         public string Number { get; private set; }
         public DateTime CreateDate { get; private set; }
@@ -23,12 +24,16 @@ namespace BaltaStore.Domain.StoreContext.Entities
         public IReadOnlyCollection<OrderItem> Items => _items.ToArray();
         public IReadOnlyCollection<Delivery> Deliveries => _deliveries.ToArray();
 
-        public void AddItem(OrderItem item)
+        
+        public void AddItem(Product product, decimal quantity)
         {
+            if(quantity > product.QuantityOnHand)
+                AddNotification("OrderItem", $"Produto {product.Title} não tem {quantity} itens em estoque.");
+
+            var item = new OrderItem(product, quantity);
             _items.Add(item);
         }
-
-        
+                
         //Criar um pedido
         public void Place()
         {

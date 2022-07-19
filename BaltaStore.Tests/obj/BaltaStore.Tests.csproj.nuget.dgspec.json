@@ -27,6 +27,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\dev\\pacote": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://azure.sefaz.es.gov.br/SUAREC/_packaging/SEFAZ-Nuget/nuget/v3/index.json": {}
         },
@@ -46,6 +47,10 @@
         "netcoreapp2.0": {
           "targetAlias": "netcoreapp2.0",
           "dependencies": {
+            "FluentValidator": {
+              "target": "Package",
+              "version": "[2.0.2, )"
+            },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
               "target": "Package",
@@ -90,6 +95,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\dev\\pacote": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://azure.sefaz.es.gov.br/SUAREC/_packaging/SEFAZ-Nuget/nuget/v3/index.json": {}
         },
@@ -123,7 +129,7 @@
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[16.11.0, )"
+              "version": "[16.0.0, )"
             },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",

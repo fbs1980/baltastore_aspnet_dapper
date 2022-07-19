@@ -703,6 +703,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "D:\\dev\\pacote": {},
         "https://api.nuget.org/v3/index.json": {},
         "https://azure.sefaz.es.gov.br/SUAREC/_packaging/SEFAZ-Nuget/nuget/v3/index.json": {}
       },
