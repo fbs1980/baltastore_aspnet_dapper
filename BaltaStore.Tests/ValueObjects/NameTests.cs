@@ -6,7 +6,7 @@ using System.Text;
 
 namespace BaltaStore.Tests.ValueObjects
 {
-    internal class NameTests
+    public class NameTests
     {
 
         [TestMethod]

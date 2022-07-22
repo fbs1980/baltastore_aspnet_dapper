@@ -2,7 +2,7 @@
 
 namespace BaltaStore.Domain.StoreContext.Entities
 {
-    internal class OrderItem : Notifiable
+    public class OrderItem : Notifiable
     {
         public OrderItem(Product product, decimal quantity)
         {

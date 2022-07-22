@@ -1,6 +1,7 @@
 ﻿
 
 using BaltaStore.Domain.StoreContext.Entities;
+using BaltaStore.Domain.StoreContext.Enums;
 using BaltaStore.Domain.StoreContext.ValueObjects;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -10,6 +11,11 @@ namespace BaltaStore.Tests.Entities
     public class OrderTests
     {
         private Customer _customer;
+        private Order _order;
+        private Product _mouse;
+        private Product _keyboard;
+        private Product _chair;
+        private Product _monitor;
 
         public OrderTests()
         {
@@ -17,22 +23,27 @@ namespace BaltaStore.Tests.Entities
             var document = new Document("46718115533");
             var email = new Email("hello@balta.io");
             _customer = new Customer(name, document, email, "551999876542", "Rua Sete");
+            _order = new Order(_customer);
+
+            _mouse = new Product("Mouse Gamer", "Mouse Gamer", "mouse.jpg", 100M, 10);
+            _keyboard = new Product("Teclado Gamer", "Teclado Game", "Teclado.jpg", 100M, 10);
+            _chair = new Product("Cadeira Gamer", "Cadeira Gamer", "Cadeira.jpg", 100M, 10);
+            _monitor = new Product("Monitor Gamer", "Monitor Gamer", "Monitor.jpg", 100M, 10);
         }
 
         // Consigo criar novo pedido
         [TestMethod]
         public void CriarPedidoValido()
         {            
-            var order = new Order(_customer);
-            Assert.AreEqual(true, order.IsValid);
+            Assert.AreEqual(true, _order.IsValid);
         }
 
 
-        // Ao criar o pedio o status deve ser created
+        // Ao criar o pedido, o status deve ser created
         [TestMethod]
         public void StatusPedidoCriado()
         {
-            Assert.Fail();
+            Assert.AreEqual(EOrderStatus.Created, _order.Status);
         }
 
 
@@ -40,7 +51,9 @@ namespace BaltaStore.Tests.Entities
         [TestMethod]
         public void RetornaDoisQuandoAdicionaDoisItens()
         {
-            Assert.Fail();
+            _order.AddItem(_monitor, 5);
+            _order.AddItem(_mouse, 5);
+            Assert.AreEqual(2, _order.Items.Count);
         }
 
 
@@ -48,7 +61,8 @@ namespace BaltaStore.Tests.Entities
         [TestMethod]
         public void RetornaCincoQuandoCompradoCincoItens()
         {
-            Assert.Fail();
+            _order.AddItem(_mouse, 5);
+            Assert.AreEqual(_mouse.QuantityOnHand, 5);
         }
 
 
@@ -56,7 +70,8 @@ namespace BaltaStore.Tests.Entities
         [TestMethod]
         public void RetornaNumeroQuandoPedido()
         {
-            Assert.Fail();
+            _order.Place();
+            Assert.AreNotEqual("", _order.Number);
         }
 
 
@@ -64,7 +79,8 @@ namespace BaltaStore.Tests.Entities
         [TestMethod]
         public void RetornaPagoQuandoPedidoPago()
         {
-            Assert.Fail();
+            _order.Pay();
+            Assert.AreEqual(EOrderStatus.Paid, _order.Status);
         }
 
 
@@ -72,7 +88,19 @@ namespace BaltaStore.Tests.Entities
         [TestMethod]
         public void RetornaDoisQuandoCromprarDez()
         {
-            Assert.Fail();
+            _order.AddItem(_mouse, 1);
+            _order.AddItem(_mouse, 1);
+            _order.AddItem(_mouse, 1);
+            _order.AddItem(_mouse, 1);
+            _order.AddItem(_mouse, 1);
+            _order.AddItem(_mouse, 1);
+            _order.AddItem(_mouse, 1);
+            _order.AddItem(_mouse, 1);
+            _order.AddItem(_mouse, 1);
+            _order.AddItem(_mouse, 1);
+            _order.Shipp();
+
+            Assert.AreEqual(2, _order.Deliveries.Count);
         }
 
 
@@ -80,7 +108,8 @@ namespace BaltaStore.Tests.Entities
         [TestMethod]
         public void StatusCanceladoQuandoPedidoCancelado()
         {
-            Assert.Fail();
+            _order.Cancel();
+            Assert.AreEqual(EOrderStatus.Canceled, _order.Status);
         }
 
 
@@ -88,7 +117,23 @@ namespace BaltaStore.Tests.Entities
         [TestMethod]
         public void EntregaCanceladaQuandoPedidoCancelado()
         {
-            Assert.Fail();
+            _order.AddItem(_mouse, 1);
+            _order.AddItem(_mouse, 1);
+            _order.AddItem(_mouse, 1);
+            _order.AddItem(_mouse, 1);
+            _order.AddItem(_mouse, 1);
+            _order.AddItem(_mouse, 1);
+            _order.AddItem(_mouse, 1);
+            _order.AddItem(_mouse, 1);
+            _order.AddItem(_mouse, 1);
+            _order.AddItem(_mouse, 1);
+            _order.Shipp();
+
+            _order.Cancel();
+            foreach (var x in _order.Deliveries)
+            {
+                Assert.AreEqual(EDeliveryStatus.Canceled, x.Status);
+            }            
         }
     }
 }
